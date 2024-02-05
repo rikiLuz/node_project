@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server table</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td code, th code {
+            background-color: #f8f8f8;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Server Documentation</h1>
+
+<!-- Cars Section -->
+<h2>Cars</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Extreme Cases</th>
+            <th>Query Parameters</th>
+            <th>URL</th>
+            <th>Body (Request Payload)</th>
+            <th>Method</th>
+            <th>Explanation</th>
+            <th>Response</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Add Car -->
+        <tr>
+            <td>Add sweet</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/sweets</code></td>
+            <td><code>{"sweetName": "candy", "sweetAmount": 5, "sweetPrice": 1, "sweetManuFacturingDate": "2022-01-28", "imgUrl":"https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}</code></td>
+            <td><code>POST</code></td>
+            <td>Add a new sweet to the inventory</td>
+            <td><code>{"_id": "123", "sweetName": "candy", "sweetAmount": 5, "sweetPrice": 1, "sweetManuFacturingDate": "2022-01-28", "imgUrl":"https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}</code></td>
+            <td>Create a new sweet record</td>
+        </tr>
+        
+        <!-- Get All Sweets -->
+        <tr>
+            <td>Get All Sweets</td>
+            <td><code>txt=candy, page=1, perPage=6</code></td>
+            <td><code>/api/sweets</code></td>
+            <td><code>N/A</code></td>
+            <td><code>GET</code></td>
+            <td>Retrieve a list of sweets based on search criteria</td>
+            <td><code>[{"_id": "123", "sweetName": "candy", "sweetAmount": 5, "sweetPrice": 1, "sweetManuFacturingDate": "2022-01-28", "imgUrl":"https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}]</code></td>
+            <td>Retrieve a list of sweets</td>
+        </tr>
+
+        <!-- Get Sweet By Id -->
+        <tr>
+            <td>Get sweet By Id</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/sweets/:id</code></td>
+            <td><code>N/A</code></td>
+            <td><code>GET</code></td>
+            <td>Retrieve details of a specific sweet by ID</td>
+            <td><code>{"_id": "123", "sweetName": "candy", "sweetAmount": 5, "sweetPrice": 1, "sweetManuFacturingDate": "2022-01-28", "imgUrl":"https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}</code></td>
+            <td>Retrieve details of a specific sweet</td>
+        </tr>
+
+        <!-- Update Sweet -->
+        <tr>
+            <td>Update sweet</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/sweets/:id</code></td>
+            <td><code>{"sweetPrice": 2}</code></td>
+            <td><code>PUT</code></td>
+            <td>Update details of a specific sweet by ID</td>
+            <td><code>{"_id": "123", "sweetName": "candy", "sweetAmount": 5, "sweetPrice": 1, "sweetManuFacturingDate": "2022-01-28", "imgUrl":"https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}</code></td>
+            <td>Update details of a specific sweet</td>
+        </tr>
+
+        <!-- Delete Sweet By Id -->
+        <tr>
+            <td>Delete Sweet By Id</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/sweets/:id</code></td>
+            <td><code>N/A</code></td>
+            <td><code>DELETE</code></td>
+            <td>Delete a specific sweet by ID</td>
+            <td><code>{"_id": "123","sweetName": "candy", "sweetAmount": 5, "sweetPrice": 1, "sweetManuFacturingDate": "2022-01-28", "imgUrl":"https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}</code></td>
+            <td>Delete a specific sweet</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Users Section -->
+<!-- Orders Section -->
+<!-- Users Section -->
+<h2>Users</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Extreme Cases</th>
+            <th>Query Params</th>
+            <th>URL</th>
+            <th>Body (Request Payload)</th>
+            <th>Method</th>
+            <th>Explanation</th>
+            <th>Response</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Add User -->
+        <tr>
+            <td>If user with the same name or email exists, returns 409</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/users</code></td>
+            <td><code>{"userName": "JohnDoe", "email": "john@example.com", "password": "securePassword"}</code></td>
+            <td><code>POST</code></td>
+            <td>Add a new user to the database and return a token</td>
+            <td><code>{"token": "abc123", "_id": "123", "email": "john@example.com", "userName": "JohnDoe", "role": "USER", "date": "2022-01-28"}</code></td>
+            <td>Create a new user</td>
+        </tr>
+        
+        <!-- Get All Users -->
+        <tr>
+            <td>Get All Users</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/users</code></td>
+            <td><code>N/A</code></td>
+            <td><code>GET</code></td>
+            <td>Retrieve all users (only for users with role ADMIN)</td>
+            <td><code>[{_id, email, userName, role, date}]</code></td>
+            <td>Read all users</td>
+        </tr>
+
+        <!-- User Login -->
+        <tr>
+            <td>Check if user credentials match with the database</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/users/login</code></td>
+            <td><code>{"email": "john@example.com", "password": "securePassword"}</code></td>
+            <td><code>POST</code></td>
+            <td>User login and receive a token</td>
+            <td><code>{"token": "abc123"}</code></td>
+            <td>Login as an existing user</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Orders Section -->
+<h2>Orders</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Extreme Cases</th>
+            <th>Query Params</th>
+            <th>URL</th>
+            <th>Body (Request Payload)</th>
+            <th>Method</th>
+            <th>Explanation</th>
+            <th>Response</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Add Order -->
+        <tr>
+            <td>Add Order</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/orders</code></td>
+            <td><code>{"deliveryDate": "2022-02-28", "customerAddress": "123 Main St", "productsList": [{"productName": "Product1", "amount": 50, "imagePath": "https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}]}</code></td>
+            <td><code>POST</code></td>
+            <td>Add a new order to the system</td>
+            <td><code>{"_id": "123", "orderDate": "2022-01-28", "deliveryDate": "2022-02-28", "customerAddress": "123 Main St", "customerCode": "abc123", "productsList": [{"productName": "Product1", "amount": 50, "imagePath": "https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}]}</code></td>
+            <td>Create a new order</td>
+        </tr>
+        
+    
+    
+
+        <!-- Delete Order By Id -->
+        <tr>
+            <td>If id is invalid returns 400; if order not found returns 404</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/orders/:id</code></td>
+            <td><code>N/A</code></td>
+            <td><code>DELETE</code></td>
+            <td>Delete order by ID</td>
+            <td><code>{"_id": "123", "orderDate": "2022-01-28", "deliveryDate": "2022-02-28", "customerAddress": "123 Main St", "customerCode": "abc123", "productsList": [{"productName": "Product1", "amount": 50, "imagePath": "https://artworktlv.co.il/wp-content/uploads/2021/02/Screen-Shot-2021-02-07-at-12.26.13-PM.png"}], "orderHasShipped": false}</code></td>
+            <td>Delete an order</td>
+        </tr>
+
+        <!-- Get All Orders -->
+        <tr>
+            <td>Get All Orders</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/orders</code></td>
+            <td><code>N/A</code></td>
+            <td><code>GET</code></td>
+            <td>Retrieve all orders (only for users with role ADMIN)</td>
+            <td><code>[{_id, orderDate, deliveryDate, customerAddress, customerCode, productsList: {productName, amount, imagePath}, orderHasShipped}]</code></td>
+            <td>Read all orders</td>
+        </tr>
+
+
+        <!-- Get All Users By Client Order Code -->
+        <tr>
+            <td>Get All Users By Client Order Code</td>
+            <td><code>{"invitingCode": "abc123"}</code></td>
+            <td><code>/api/orders/byInvitingCode</code></td>
+            <td><code>N/A</code></td>
+            <td><code>GET</code></td>
+            <td>Retrieve all orders for a specific client (optional for admins)</td>
+            <td><code>[{_id, orderDate, deliveryDate, customerAddress, customerCode, productsList: {productName, amount, imagePath}, orderHasShipped}]</code></td>
+            <td>Read orders by client code</td>
+        </tr>
+
+        <!-- Update Order -->
+        <tr>
+            <td>If id is invalid returns 400; if order not found returns 404</td>
+            <td><code>N/A</code></td>
+            <td><code>/api/orders/:id</code></td>
+            <td><code>
+
+
+<!--
+
+</body>
+</html>
